@@ -1,3 +1,2 @@
- Python - Hello, World tasks
- starting with python
+python hello world tasks
 
