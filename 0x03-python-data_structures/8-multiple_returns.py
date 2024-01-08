@@ -3,7 +3,7 @@ def multiple_returns(sentence):
     if sentence == '':
         first = None
         my_tup = len(sentence), first
-        return my_tubtup
+        return my_tup
 
     my_tup = len(sentence), sentence[0]
     return my_tup
