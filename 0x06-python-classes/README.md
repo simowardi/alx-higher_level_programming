@@ -33,5 +33,4 @@ Private instance attribute position.
 Property def position(self): to retreive position.
 Property setter def position(self, value): to set position.
 Instantiation with optional size and position: def __init__(self, size=0, position=(0, 0)):
-If a provided position attribute is not a tuple of two integers, a TypeError exception is raised with the message position must be a tuple of 2 positive integers.
-
+If a provided position attribute is not a tuple of two integers, a TypeError exception is raised with the message position must be a tuple of 2 positive integers
