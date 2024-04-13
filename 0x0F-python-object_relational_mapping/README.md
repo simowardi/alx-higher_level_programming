@@ -79,4 +79,3 @@ Includes class attribute state_id that is a foreign key to states.id.
 14-model_city_fetch_by_state.py: Python script that uses SQLAlchemy to list all City objects in the database hbtn_0e_14_usa.
 Usage: ./14-model_city_fetch_by_state.py <mysql username> <mysql password> <database name>.
 Results are sorted by ascending cities.id.
-
