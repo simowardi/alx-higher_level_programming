@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """Finds a peak in a list of unsorted integers"""
 
+
 def find_peak(list_of_integers):
     """
     Finds a peak element in a list of unsorted integers.
-    A peak element is an element that is greater than or equal to its neighbors.
+    A peak element is an element that is
+    greater than or equal to its neighbors.
     """
     if not list_of_integers:
         return None
@@ -17,8 +19,8 @@ def find_peak(list_of_integers):
 
         # Check if the middle element is smaller than the next element
         if list_of_integers[mid] < list_of_integers[mid + 1]:
-             # If true, the peak (if it exists) is to the right of mid
-             # Update left to mid + 1
+            # If true, the peak (if it exists) is to the right of mid
+            # Update left to mid + 1
             left = mid + 1
         else:
             # Otherwise, the peak (if it exists) is to the left of or at mid
