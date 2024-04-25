@@ -5,8 +5,6 @@
 def find_peak(list_of_integers):
     """
     Finds a peak element in a list of unsorted integers.
-    A peak element is an element that is
-    greater than or equal to its neighbors.
     """
     if not list_of_integers or list_of_integers == []:
         return None
