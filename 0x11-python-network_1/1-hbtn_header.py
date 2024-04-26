@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Create a Request object for the specified URL
     req_obj = urllib.request.Request(url)
 
-    with  urllib.request.urlopen(req_obj) as response:
+    with urllib.request.urlopen(req_obj) as response:
         # Get the `X-Request-Id` value from the response headers
         request_id = response.headers.get('X-Request-Id')
 
