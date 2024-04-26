@@ -22,17 +22,15 @@ if __name__ == "__main__":
     # Make a GET request to the GitHub API
     response = requests.get(url)
 
-    if response.status_code == 200:
-        commits = response.json()
+    # Retrieve the JSON data from the response
+    commits = response.json()
 
-        try:  # Retrieve the 10 most recent commits
-            for commit in commits[:10]:
-                commit_id = commit.get("sha")
-                author_name = commit.get("commit").get("author").get("name")
-                print(f"{commit_id}: {author_name}")
+    # Iterate over the first 10 commits (if available)
+    for commit in commits[:10]:
+        # Get the commit ID
+        commit_id = commit.get("sha")
+        # Get the author name
+        author_name = commit.get("commit").get("author").get("name")
 
-        except IndexError:
-            pass
-
-    else:
-        print("Error retrieving commits. Status code:", response.status_code)
+        # Print the commit ID and author name
+        print(f"{commit_id}: {author_name}")
