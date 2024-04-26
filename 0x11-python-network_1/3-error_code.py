@@ -10,7 +10,8 @@ import urllib.request
 
 if __name__ == "__main__":
 
-    url = sys.argv[1]       # Extract the URL from the command line argument
+    # Extract the URL from the command line argument
+    url = sys.argv[1]
 
     req_obj = urllib.request.Request(url)
 
