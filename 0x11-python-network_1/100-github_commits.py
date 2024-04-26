@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # Get the repository and owner names from the command line arguments
     repo = sys.argv[1]
     owner = sys.argv[2]
- 
+
     # Construct the API URL using the repository and owner names
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
 
@@ -23,11 +23,16 @@ if __name__ == "__main__":
     response = requests.get(url)
 
     if response.status_code == 200:
-        commits = response.json()[:10] # Get the most recent 10 commits
+        commits = response.json()
 
-        for commit in commits:
-            sha = commit['sha']
-            author = commit['commit']['author']['name']
-            print(f"{sha}: {author}") # Print commit SHA and the author name
+        try:  # Retrieve the 10 most recent commits
+            for commit in commits[:10]:
+                commit_id = commit.get("sha")
+                author_name = commit.get("commit").get("author").get("name")
+                print(f"{commit_id}: {author_name}")
+
+        except IndexError:
+            pass
+
     else:
-        print("Error retrieving commits")
+        print("Error retrieving commits. Status code:", response.status_code)
