@@ -13,11 +13,8 @@ import sys
 
 if __name__ == "__main__":
     # Get the repository and owner names from the command line arguments
-    repo = sys.argv[1]
-    owner = sys.argv[2]
-
     # Construct the API URL using the repository and owner names
-    url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+    url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
 
     # Make a GET request to the GitHub API
     response = requests.get(url)
