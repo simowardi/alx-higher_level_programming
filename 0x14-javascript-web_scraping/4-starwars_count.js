@@ -21,5 +21,5 @@ request(apiUrl, (error, response, body) => {
   // Filter films where Wedge Antilles (character ID 18) is present
   const count = films.filter(film => film.characters.includes(`${apiUrl}${characterId}/`)).length;
 
-  console.log(count)
+  console.log(count);
 });

@@ -1,7 +1,6 @@
 #!/usr/bin/node
 // This script fetches and prints the title of a Star Wars movie based on the episode number.
 
-
 const request = require('request');
 
 const movieId = process.argv[2];
