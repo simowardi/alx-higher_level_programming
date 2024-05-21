@@ -11,6 +11,5 @@ const stringToWrite = process.argv[3];
 fs.writeFile(filePath, stringToWrite, 'utf8', (error) => {
   if (error) {
     console.log(error);
-    return;
   }
 });
