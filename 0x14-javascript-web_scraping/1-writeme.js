@@ -1,6 +1,5 @@
 #!/usr/bin/node
 // This script writes a string to a file.
-// Import the file system module
 
 const fs = require('fs');
 
@@ -14,5 +13,4 @@ fs.writeFile(filePath, stringToWrite, 'utf8', (error) => {
     console.error(error);
     return;
   }
-  console.log(`Successfully wrote to ${filePath}`);
 });
