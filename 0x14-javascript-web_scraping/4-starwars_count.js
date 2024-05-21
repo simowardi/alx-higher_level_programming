@@ -5,21 +5,21 @@ const request = require('request');
 
 const apiUrl = process.argv[2];
 
-const characterId = 18;
-
-request(apiUrl, (error, response, body) => {
-  // Make a GET request to the Star Wars API.
-
-  if (error) {
-    // Print the error object if an error occurred.
-    console.error(error);
-    return;
+// Use the 'request' module to perform an HTTP GET request to the URL
+request(apiUrl, function (error, response, body) {
+  // Check if there was no error during the HTTP request.
+  if (!error) {
+    // parse the JSON data and extract the "results" array
+    const results = JSON.parse(body).results;
+    // Use the 'reduce()' method to iterate through the movies in the 'results' array.
+    console.log(results.reduce((count, movie) => {
+      // check if there is a character with ID 18 ('/18/') in the 'characters' array.
+      return movie.characters.find((character) => character.endsWith('/18/'))
+        // If a character with ID 18 is found, increment the count by 1.
+        ? count + 1
+        // Otherwise, keep the count unchanged.
+        : count;
+      // The 'reduce()' method starts with an initial value of 0 ('0' at the end).
+    }, 0));
   }
-
-  const films = JSON.parse(body).results;
-
-  // Filter films where Wedge Antilles (character ID 18) is present
-  const count = films.filter(film => film.characters.includes(`${apiUrl}${characterId}/`)).length;
-
-  console.log(count);
 });
